@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-09-04T17:51:44 AEST" name="Default suite" finished-at="2021-09-04T17:54:07 AEST" duration-ms="142893">
+    <groups>
+      <group name="regression">
+        <method signature="Contact.verify_Contact_Error_Validation()[pri:1, instance:com.planitautomation.contact.test.Contact@318ba8c8]" name="verify_Contact_Error_Validation" class="com.planitautomation.contact.test.Contact"/>
+        <method signature="Contact.verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" name="verify_Contact_Success_Validation" class="com.planitautomation.contact.test.Contact"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="Contact.verify_Contact_Error_Validation()[pri:1, instance:com.planitautomation.contact.test.Contact@318ba8c8]" name="verify_Contact_Error_Validation" class="com.planitautomation.contact.test.Contact"/>
+        <method signature="Contact.verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" name="verify_Contact_Success_Validation" class="com.planitautomation.contact.test.Contact"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2021-09-04T17:51:44 AEST" name="Default test" finished-at="2021-09-04T17:54:07 AEST" duration-ms="142893">
+      <class name="com.planitautomation.contact.test.Contact">
+        <test-method is-config="true" signature="initTestSuite()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:51:44 AEST" name="initTestSuite" finished-at="2021-09-04T17:51:44 AEST" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTestSuite -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:51:44 AEST" name="initWebDriver" finished-at="2021-09-04T17:52:28 AEST" duration-ms="43612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:28 AEST" name="initPageObjects" finished-at="2021-09-04T17:52:28 AEST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method signature="verify_Contact_Error_Validation()[pri:1, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:28 AEST" name="verify_Contact_Error_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:52:45 AEST" duration-ms="16654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Error_Validation -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:45 AEST" name="initWebDriver" finished-at="2021-09-04T17:52:46 AEST" duration-ms="1259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method signature="verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:46 AEST" name="verify_Contact_Success_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:52:48 AEST" duration-ms="1768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Success_Validation -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:46 AEST" name="initPageObjects" finished-at="2021-09-04T17:52:46 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:52:48 AEST" name="initWebDriver" finished-at="2021-09-04T17:53:04 AEST" duration-ms="16218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:04 AEST" name="initPageObjects" finished-at="2021-09-04T17:53:04 AEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method signature="verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:04 AEST" name="verify_Contact_Success_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:53:20 AEST" duration-ms="15486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Success_Validation -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:20 AEST" name="initWebDriver" finished-at="2021-09-04T17:53:42 AEST" duration-ms="22146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method signature="verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:42 AEST" name="verify_Contact_Success_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:53:55 AEST" duration-ms="12766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Success_Validation -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:42 AEST" name="initPageObjects" finished-at="2021-09-04T17:53:42 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:53:55 AEST" name="initWebDriver" finished-at="2021-09-04T17:54:03 AEST" duration-ms="7934" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method signature="verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:03 AEST" name="verify_Contact_Success_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:54:04 AEST" duration-ms="1854" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Success_Validation -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:03 AEST" name="initPageObjects" finished-at="2021-09-04T17:54:03 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method is-config="true" signature="initWebDriver()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:04 AEST" name="initWebDriver" finished-at="2021-09-04T17:54:05 AEST" duration-ms="1028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWebDriver -->
+        <test-method signature="verify_Contact_Success_Validation()[pri:2, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:05 AEST" name="verify_Contact_Success_Validation" description="Verify Contact Page" finished-at="2021-09-04T17:54:07 AEST" duration-ms="1845" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Contact_Success_Validation -->
+        <test-method is-config="true" signature="initPageObjects()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:05 AEST" name="initPageObjects" finished-at="2021-09-04T17:54:05 AEST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initPageObjects -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.planitautomation.contact.test.Contact@318ba8c8]" started-at="2021-09-04T17:54:08 AEST" name="tearDown" finished-at="2021-09-04T17:54:28 AEST" duration-ms="20896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.planitautomation.contact.test.Contact -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
