@@ -1,4 +1,4 @@
-package com.planitautomation.Jupiter.pages;
+package com.planitautomation.common.pages;
 
 import org.openqa.selenium.WebDriver;
 
@@ -23,3 +23,4 @@ public abstract class Page {
   }
 
 }
+

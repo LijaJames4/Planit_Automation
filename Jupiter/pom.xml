@@ -27,6 +27,12 @@
       <artifactId>selenium-java</artifactId>
       <version>3.141.59</version>
     </dependency>
+     <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>4.2.0</version>
+</dependency>
   </dependencies>
   <build>
     <resources>
@@ -110,18 +116,18 @@
     </profile>
     <!-- environments -->
     <profile>
-      <id>localhost</id>
+      <id>sit</id>
       <properties>
-        <site.url>http://localhost/</site.url>
+        <site.url>http://jupiter.cloud.planittesting.com</site.url>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
     </profile>
     <profile>
-      <id>devhost</id>
+      <id>uat</id>
       <properties>
-        <site.url>http://devhost/</site.url>
+        <site.url>http://jupiter.cloud.planittesting.com</site.url>
       </properties>
     </profile>
     <profile>

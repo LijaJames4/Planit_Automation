@@ -1,7 +1,6 @@
-package com.planitautomation.Jupiter;
+package com.planitautomation.common;
 
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;

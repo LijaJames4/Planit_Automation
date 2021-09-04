@@ -1,7 +1,8 @@
-package com.planitautomation.Jupiter;
+package com.planitautomation.common;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Capabilities;
@@ -10,12 +11,13 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.stqa.selenium.factory.WebDriverPool;
 
 /**
  * Base class for TestNG-based test classes
  */
-public class TestNgTestBase {
+public class Planit_Base {
 
   protected static URL gridHubUrl = null;
   protected static String baseUrl;
@@ -35,7 +37,15 @@ public class TestNgTestBase {
 
   @BeforeMethod
   public void initWebDriver() {
+	  switch(capabilities.getBrowserName()) {
+	  case "chrome": WebDriverManager.chromedriver().setup();
+	  case "firefox" : WebDriverManager.firefoxdriver().setup();
+		  default: break;
+	  }
     driver = WebDriverPool.DEFAULT.getDriver(gridHubUrl, capabilities);
+    driver.manage().window().maximize();
+    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    driver.get(baseUrl);
   }
 
   @AfterSuite(alwaysRun = true)
