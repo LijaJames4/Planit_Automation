@@ -27,7 +27,7 @@ public class Shop extends Planit_Base{
 			Assert.assertTrue(driver.findElement(By.xpath("//*[text()=\" Fluffy Bunny\"]")).isDisplayed());
 			Assert.assertTrue(driver.findElement(By.xpath("//*[text()=\" Funny Cow\"]")).isDisplayed());
 					
-			driver.close();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
