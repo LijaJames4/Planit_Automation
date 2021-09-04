@@ -6,7 +6,7 @@
   <test name="Test1">
     <classes>
       <class name="com.planitautomation.contact.test.Contact"/>
-      <class name="com.planitautomation.contact.test.Shop"/>
+      <class name="com.planitautomation.shop.test.Shop"/>
     </classes>
   </test>  
 </suite>
