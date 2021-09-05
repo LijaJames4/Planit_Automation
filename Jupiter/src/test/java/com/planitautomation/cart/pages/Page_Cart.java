@@ -33,4 +33,5 @@ public class Page_Cart extends Page{
 			WebElement xpt = 	driver.findElement(By.xpath("//*[text()=\"Check Out\"]/preceding::strong"));
 			return xpt;
 		}
+	 
 }

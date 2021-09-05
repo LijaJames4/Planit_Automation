@@ -27,4 +27,8 @@ public class Page_Shop extends Page{
 			WebElement xpt = 	driver.findElement(By.xpath("//*[@id=\"product-"+ index +"\"]/descendant::a"));
 			return xpt;
 		}
+	 public WebElement get_xpt_Buy(String product) {
+			WebElement xpt = 	driver.findElement(By.xpath("//*[text()=\""+product+"\"]/following-sibling::p/child::a"));
+			return xpt;
+		}
 }

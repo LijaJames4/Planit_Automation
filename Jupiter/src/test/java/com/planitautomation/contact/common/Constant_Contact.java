@@ -11,4 +11,6 @@ public class Constant_Contact {
 	public static final String EMAIL_ERR = "email-err";
 	public static final String MESSAGE_ERR = "message-err";
 	public static final String THANKS = "Thanks";
+	public static final String SUBMIT_XPT = "//a[.='Submit']";
+	public static final String THANKS_XPT = "//*[contains(text(),'Thanks')]";
 }
