@@ -25,7 +25,7 @@ public class Planit_Base {
 
   protected WebDriver driver;
 
-  @BeforeSuite
+  @BeforeSuite(alwaysRun=true)
   public void initTestSuite() throws IOException {
     SuiteConfiguration config = new SuiteConfiguration();
     baseUrl = config.getProperty("site.url");
@@ -35,7 +35,7 @@ public class Planit_Base {
     capabilities = config.getCapabilities();
   }
 
-  @BeforeMethod
+  @BeforeMethod(alwaysRun=true)
   public void initWebDriver() {
 	  switch(capabilities.getBrowserName()) {
 	  case "chrome": WebDriverManager.chromedriver().setup();

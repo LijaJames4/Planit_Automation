@@ -9,67 +9,77 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.planitautomation.common.Planit_Base;
+import com.planitautomation.contact.common.Constant_Contact;
 import com.planitautomation.contact.pages.Page_Contact;
 
-public class Contact extends Planit_Base{
-	
-	 private Page_Contact contactpage;
+public class Contact extends Planit_Base {
 
-	  @BeforeMethod
-	  public void initPageObjects() {
-		  contactpage = PageFactory.initElements(driver, Page_Contact.class);
-	  }
-	@Test(description = "Verify Contact Page", priority = 1, groups = {"smoke","regression"})
-	public void verify_Contact_Error_Validation() {
-		try {
-			driver.findElement(By.xpath("//*[@id=\"nav-contact\"]/a")).click();
-			WebDriverWait wait = new WebDriverWait(driver, 60);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[.='Submit']")));
-			driver.findElement(By.xpath("//a[.='Submit']")).click();
-			
-			contactpage.get_xpt_Submit().click();
-			
-			Assert.assertTrue(driver.findElement(By.id("forename-err")).isDisplayed());
-			Assert.assertTrue(driver.findElement(By.id("email-err")).isDisplayed());
-			Assert.assertTrue(driver.findElement(By.id("message-err")).isDisplayed());
-			
-			driver.findElement(By.id("forename")).sendKeys("John");
-			driver.findElement(By.id("email")).sendKeys("john.example@planit.net.au");
-			driver.findElement(By.id("message")).sendKeys("Good Quality Product. Children loved it!!");
-			driver.findElement(By.xpath("//a[.='Submit']")).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Thanks')]")));
-		
-			Assert.assertTrue(driver.findElements(By.id("forename-err")).isEmpty());
-			Assert.assertTrue(driver.findElements(By.id("email-err")).isEmpty());
-			Assert.assertTrue(driver.findElements(By.id("message-err")).isEmpty());
-				
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
+	private Page_Contact pageContact;
+
+	@BeforeMethod(alwaysRun=true)
+	public void initPageObjects() {
+		pageContact = PageFactory.initElements(driver, Page_Contact.class);
 	}
-	@Test(description = "Verify Contact Page", priority = 2, groups = {"smoke","regression"},invocationCount = 5)
-	public void verify_Contact_Success_Validation() {
+
+	@Test(description = "Verify Error messages in Contact Page", priority = 1, groups=
+			"regression", enabled = true)
+	public void validate_Contact_Error_Messages() {
 		try {
-				
-			driver.findElement(By.xpath("//*[@id=\"nav-contact\"]/a")).click();
-			WebDriverWait wait = new WebDriverWait(driver, 60);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[.='Submit']")));
-			
-			driver.findElement(By.id("forename")).sendKeys("John");
-			driver.findElement(By.id("email")).sendKeys("john.example@planit.net.au");
-			driver.findElement(By.id("message")).sendKeys("Good Quality Product. Children loved it!!");
-			driver.findElement(By.xpath("//a[.='Submit']")).click();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Thanks')]")));
-		
-			Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'Thanks')]")).isDisplayed());
-					
-		
-		}catch(Exception e) {
-			e.printStackTrace();
+
+			navigate_To_Contact();
+			wait_For_Element("//a[.='Submit']");
+			pageContact.get_xpt_Submit().click();
+
+			Assert.assertTrue(pageContact.get_id_ForeNameErrorMessage().isDisplayed());
+			Assert.assertTrue(pageContact.get_id_EmailErrorMessage().isDisplayed());
+			Assert.assertTrue(pageContact.get_id_MessageBoxErrorMessage().isDisplayed());
+
+			pageContact.get_id_ForeName().sendKeys("John");
+			pageContact.get_id_Email().sendKeys("john.example@planit.net.au");
+			pageContact.get_id_MessageBox().sendKeys("Good Quality Product. Children loved it!!");
+
+			pageContact.get_xpt_Submit().click();
+			wait_For_Element("//*[contains(text(),'Thanks')]");
+
+			Assert.assertTrue(driver.findElements(By.id(Constant_Contact.FORENAME_ERR)).isEmpty());
+			Assert.assertTrue(driver.findElements(By.id(Constant_Contact.EMAIL_ERR)).isEmpty());
+			Assert.assertTrue(driver.findElements(By.id(Constant_Contact.MESSAGE_ERR)).isEmpty());
+
+		} catch (Exception e) {
+			Assert.fail("Excpetion thrown in : " + Contact.class + " \nException is : " + e.getMessage());
+			// e.printStackTrace();
 		}
-			
+
+	}
+
+	@Test(description = "Verify Feedback submission in Contact Page", priority = 2, groups = { "smoke",
+			"regression" }, enabled = true, invocationCount = 1)
+	public void verify_Contact_Success() {
+		try {
+
+			navigate_To_Contact();
+			wait_For_Element("//a[.='Submit']");
+			pageContact.get_id_ForeName().sendKeys("John");
+			pageContact.get_id_Email().sendKeys("john.example@planit.net.au");
+			pageContact.get_id_MessageBox().sendKeys("Good Quality Product. Children loved it!!");
+
+			pageContact.get_xpt_Submit().click();
+			wait_For_Element("//*[contains(text(),'Thanks')]");
+
+			Assert.assertTrue(pageContact.get_xpt_Thanks().isDisplayed());
+
+		} catch (Exception e) {
+			Assert.fail("Excpetion thrown in : " + Contact.class  + " \nException is : " + e.getMessage());
+		}
+	}
+
+	public void navigate_To_Contact() {
+		pageContact.get_id_Contact_Tab().click();
+	}
+
+	public void wait_For_Element(String xpath) {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 	}
 
 }
